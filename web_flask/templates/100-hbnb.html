@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AirBnB Clone</title>
+    <link rel="stylesheet" href="/static/styles/3-footer.css">
+    <link rel="stylesheet" href="/static/styles/3-header.css">
+    <link rel="stylesheet" href="/static/styles/4-common.css">
+    <link rel="stylesheet" href="/static/styles/6-filters.css">
+    <link rel="stylesheet" href="/static/styles/8-places.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/static/images/logo.png" alt="AirBnB logo">
+        </div>
+    </header>
+    <div class="filters">
+        <h3>States</h3>
+        <h4>&nbsp;</h4>
+        <h3>Amenities</h3>
+        <h4>&nbsp;</h4>
+    </div>
+    <section class="places">
+        <h1>Places</h1>
+        <div class="places_list">
+            {% for place in places %}
+            <article>
+                <div class="title_box">
+                    <h2>{{ place.name }}</h2>
+                    <div class="price_by_night">
+                        ${{ place.price_by_night }}
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="max_guest">
+                        {{ place.max_guest }} Guests
+                    </div>
+                    <div class="number_rooms">
+                        {{ place.number_rooms }} Bedrooms
+                    </div>
+                    <div class="number_bathrooms">
+                        {{ place.number_bathrooms }} Bathrooms
+                    </div>
+                </div>
+                <div class="description">
+                    {{ place.description | safe }}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="text">
+                Holberton School
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
